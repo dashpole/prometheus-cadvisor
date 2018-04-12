@@ -13,7 +13,6 @@ spec:
   selector:
     app: prometheus
     component: core
-  clusterIP: 10.23.245.125
   externalTrafficPolicy: Cluster
   ports:
   - nodePort: 32575
