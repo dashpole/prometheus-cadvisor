@@ -22,7 +22,7 @@ spec:
         effect: NoSchedule
       containers:
       - name: cadvisor
-        image: gcr.io/dashpole-kubernetes-test/cadvisor-prom.v1
+        image: gcr.io/dashpole-kubernetes-test/cadvisor-opencensus
         volumeMounts:
         - name: rootfs
           mountPath: /rootfs
