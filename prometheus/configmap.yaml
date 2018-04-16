@@ -109,6 +109,14 @@ data:
         regex: ([^:]+)(?::\d+)?;(\d+)
         replacement: $1:$2
         target_label: __address__
+      - source_labels: [__meta_kubernetes_pod_node_name]
+        action: replace
+        target_label: kubernetes_pod_node_name
+
+      metric_relabel_configs:
+      - source_labels: [kubernetes_namespace, kubernetes_pod_name, kubernetes_container_name]
+        action: keep
+        regex: '.+;.+;.+'
 
     # Scrape config for service endpoints.
     #
